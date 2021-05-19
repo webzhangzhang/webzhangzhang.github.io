@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>关于本站</title>
-    <url>/2021/05/14/creat_2021014/</url>
+    <url>/2021/05/14/creat_20210514/</url>
     <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>作者是个前端工作者，工作了两年多了，但是一直没有什么技术沉淀，然后自己进行了深刻的反思，首先是因为我没有一个想要完成的东西，每天只知道完成公司交代的事情。偶然间我了解到了可以根据GitHub + hexo 搭建自己的博客，想了很久到底要不要做一件让自己骄傲的事情，或许作为读者的你，并不认为搭建一个博客有什么值得骄傲的。可能是因为你做的成绩更好，反正肯定是有原因的对吧，任何事情都是有因果的。那么有这种想法的你请绕道而行，谢谢，我就是一个每个月拿着几千块的小前端，仅此而已。<span id="more"></span></p>
 <p>关于本站的由来，都是因为自己想做一个让自己值得骄傲的事情。那么从今天起，我会不定时的更新内容，内容不限，可能是一片技术文章，可能是一篇随笔等等。</p>
 <p>此刻我的想法就是记录下整个博客搭建的流程，为一个想搭建自己博客却又不知如何从0搭建的你做一些技术指引。那么现在大概的方向有了，所以最近的文章应该就是围绕这个主题进行了，有兴趣的小伙伴可以加收藏了。</p>
@@ -12,6 +12,66 @@
       </categories>
       <tags>
         <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo + Github 搭建博客</title>
+    <url>/2021/05/17/creat-20210517/</url>
+    <content><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>作为我的第一篇文章我想了很久，总想把最好的一面展现给大家，但是吧。。。真的是markdown用的不熟练啊。第一篇我文章打算写一下搭建的过程，so，下面开始。<span id="more"></span></p>
+<h1 id="1-为什么选择Hexo"><a href="#1-为什么选择Hexo" class="headerlink" title="1.为什么选择Hexo"></a>1.为什么选择Hexo</h1><hr>
+<p>现在有很多已经成型的博客平台，比如CSDN，博客园等,但是这些博客都太正式了，你写一些随笔之类的就不合适，那么我就想为什么我不能搭建一个自己的博客，这样我想写什么就写什么，而且在后期的个性化配置上也会很方便。那么可以自己搭建的方式有很多种，比如 wordpress ,前后端都是独立开发的，还有托管给第三方平台的，前两种的话呢，会花钱租一个服务器，而且还挺贵的，如果你有钱，有时间，可以这么搞，这里我是借助托管给第三方平台（GitHub）进行的。</p>
+<h1 id="2-准备工作"><a href="#2-准备工作" class="headerlink" title="2.准备工作"></a>2.准备工作</h1><p>首先就是git，其次是node，这些都要安装的，具体安装教程可以看官网。</p>
+<h1 id="3-什么是Hexo"><a href="#3-什么是Hexo" class="headerlink" title="3.什么是Hexo"></a>3.什么是Hexo</h1><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。这是官网的原话。</p>
+<h1 id="4-安装Hexo"><a href="#4-安装Hexo" class="headerlink" title="4.安装Hexo"></a>4.安装Hexo</h1><p>这里安装的前提是你已经安装了node和git，注意node版本尽量高一点，太低的话，可能导致项目启动失败。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<p>安装好以后，可以自己新建一个文件夹，然后在这个文件夹内</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<p>这样一个初始化的项目就好了，然后我们安装npm依赖</p>
+<p><img src="/images/tree.png"></p>
+<p>scaffolds — 模版文件，hexo会根据你的模版生成文件<br>source — 用户资源存放的<br>themes — 主题文件，博客的主题文件<br>_config.yml — 是配置文件<br>其他的文件可以暂时不用管</p>
+<p>这时候，你就可以安装依赖包了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p>安装完依赖包之后就可以本地调试，查看效果了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo s --debug</span><br></pre></td></tr></table></figure>
+<p>项目启动成功后，浏览器地址栏localhost:4000即可访问。大概样子为</p>
+<p><img src="/images/init.jpg"></p>
+<h1 id="5-更换主题"><a href="#5-更换主题" class="headerlink" title="5.更换主题"></a>5.更换主题</h1><p>启动后的样子不美观，那怎么办？好在提供了可以下载的主题，地址：<a href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
+<p>本文使用的是ayer主题，下载主题</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm i hexo-theme-ayer -S</span><br></pre></td></tr></table></figure>
+<p>下载之后根目录会出现一个 <code>_config.ayer.yml</code> 文件，注意这里不要和 <code>_config.yml</code> 混淆。</p>
+<p>下载之后是不能立即生效的，需要手动配置文件，那么这时候要改动的文件是项目配置文件，为了让大家区分开两个配置文件，我们取个别名</p>
+<p><code>_config.ayer.yml</code> 主题配置文件</p>
+<p><code>_config.yml</code> 项目配置文件</p>
+<p>好的，有个区分之后就好区分了，我们要改动项目配置文件的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">theme: ayer</span><br></pre></td></tr></table></figure>
+
+<p>这时候在看一下你的页面会发现完全变了一个样子。</p>
+<p><img src="/images/ayer_init.jpg"></p>
+<h1 id="6-更新主题"><a href="#6-更新主题" class="headerlink" title="6.更新主题"></a>6.更新主题</h1><p>根目录下直接输入命令</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm update hexo-theme-ayer -S</span><br></pre></td></tr></table></figure>
+
+<h1 id="7-必备插件"><a href="#7-必备插件" class="headerlink" title="7.必备插件"></a>7.必备插件</h1><p>hexo-generator-searchdb 用于搜索</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+
+<h1 id="8-可选插件"><a href="#8-可选插件" class="headerlink" title="8.可选插件"></a>8.可选插件</h1><p>[hexo-blog-encrypt](<a href="https://github.com/D0n9X1n/hexo-blog-encrypt/blob/master/ReadMe.zh.md">https://github.com/D0n9X1n/hexo-blog-encrypt/blob/master/ReadMe.zh.md</a> 用于文章加密</p>
+<p>这里就说一个，你想要可以去插件市场，一搜一大堆那种，地址：<a href="https://hexo.io/plugins/">https://hexo.io/plugins/</a></p>
+<h1 id="9-新建菜单"><a href="#9-新建菜单" class="headerlink" title="9.新建菜单"></a>9.新建菜单</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page &lt;name&gt;</span><br></pre></td></tr></table></figure>
+
+<p>你会看到source下新出现了一个文件夹，将下面内容复制到index文件内</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">layout: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h1 id="10-常用命令"><a href="#10-常用命令" class="headerlink" title="10.常用命令"></a>10.常用命令</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page &lt;name&gt; // 创建侧边栏菜单</span><br><span class="line">hexo new &lt;module&gt; &lt;name&gt; // 创建某模块文章</span><br><span class="line">hexo d -g // 将你的修改发送的git</span><br><span class="line">hexo clean // 清除缓存，建议每次生成之前都先清除缓存</span><br></pre></td></tr></table></figure>
+
+<h1 id="11-写在最后"><a href="#11-写在最后" class="headerlink" title="11.写在最后"></a>11.写在最后</h1><p>现在你的博客已经基本成型，开始你的第一篇写作吧。</p>
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
 </search>
