@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>Hexo + Github 搭建博客 |  </title>
+      <title>creat_20210527 |  </title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -43,7 +43,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-creat-20210517"
+  id="post-creat-20210527"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -54,7 +54,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Hexo + Github 搭建博客
+  creat_20210527
 </h1>
  
 
@@ -62,8 +62,8 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2021/05/17/creat-20210517/" class="article-date">
-  <time datetime="2021-05-17T08:06:01.000Z" itemprop="datePublished">2021-05-17</time>
+      <a href="/2021/05/27/creat-20210527/" class="article-date">
+  <time datetime="2021-05-27T09:23:18.000Z" itemprop="datePublished">2021-05-27</time>
 </a> 
   <div class="article-category">
     <a class="article-category-link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
@@ -74,7 +74,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">1k</span>
+            <span class="post-count">1.1k</span>
         </span>
     </span>
 
@@ -83,7 +83,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">3 min</span>
+            <span class="post-count">4 min</span>
         </span>
     </span>
 </div>
@@ -98,55 +98,57 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>作为我的第一篇文章我想了很久，总想把最好的一面展现给大家，但是吧。。。真的是markdown用的不熟练啊。第一篇我文章打算写一下搭建的过程，so，下面开始。<span id="more"></span></p>
-<h1 id="1-为什么选择Hexo"><a href="#1-为什么选择Hexo" class="headerlink" title="1.为什么选择Hexo"></a>1.为什么选择Hexo</h1><hr>
-<p>现在有很多已经成型的博客平台，比如CSDN，博客园等,但是这些博客都太正式了，你写一些随笔之类的就不合适，那么我就想为什么我不能搭建一个自己的博客，这样我想写什么就写什么，而且在后期的个性化配置上也会很方便。那么可以自己搭建的方式有很多种，比如 wordpress ,前后端都是独立开发的，还有托管给第三方平台的，前两种的话呢，会花钱租一个服务器，而且还挺贵的，如果你有钱，有时间，可以这么搞，这里我是借助托管给第三方平台（GitHub）进行的。</p>
-<h1 id="2-准备工作"><a href="#2-准备工作" class="headerlink" title="2.准备工作"></a>2.准备工作</h1><p>首先就是git，其次是node，这些都要安装的，具体安装教程可以看官网。</p>
-<h1 id="3-什么是Hexo"><a href="#3-什么是Hexo" class="headerlink" title="3.什么是Hexo"></a>3.什么是Hexo</h1><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。这是官网的原话。</p>
-<h1 id="4-安装Hexo"><a href="#4-安装Hexo" class="headerlink" title="4.安装Hexo"></a>4.安装Hexo</h1><p>这里安装的前提是你已经安装了node和git，注意node版本尽量高一点，太低的话，可能导致项目启动失败。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+  <h1 id="什么是正则"><a href="#什么是正则" class="headerlink" title="什么是正则"></a>什么是正则</h1><p>就一句话–正则表达式通常被用来检索、替换那些符合某个规则的文本。<span id="more"></span></p>
+<h1 id="正则的使用"><a href="#正则的使用" class="headerlink" title="正则的使用"></a>正则的使用</h1><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>语法这块就很简单，我认为，写在双斜杠中间写满足条件的都是正则表达式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">举个简单的例子</span><br><span class="line">var any = 1</span><br><span class="line">var reg = /[0-9]/</span><br><span class="line">reg.test(any) // true</span><br><span class="line">如果any = &#x27;1&#x27; ,则会返回false</span><br></pre></td></tr></table></figure>
+<p>上面就是一个简单的正则校验。那么我们把 <code>reg</code> 就叫做正则表达式。</p>
+<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><p>语法说完了，那我们来说一下修饰符，因为你总要简化你的正则表达式。</p>
+<p> <code>+</code> 代表前面的字符必须至少出现一次（1次或多次）,要匹配 <code>+</code> 请使用 <code>\+</code></p>
+<p> <code>*</code> 代表前面的字符可以不出现，也可以出现一次或者多次（0次、或1次、或多次）,要匹配 <code>*</code> 请使用 <code>\*</code></p>
+<p> <code>?</code> 代表前面的字符最多只可以出现一次（0次、或1次）,要匹配 <code>?</code> 请使用 <code>\?</code></p>
+<p> <code>[]</code> 匹配 […] 中的所有字符，例如 [aeiou] 匹配字符串 “google runoob taobao” 中所有的 e o u a 字母</p>
+<p>  <code>[^]</code>匹配除了 […] 中字符的所有字符，例如 [^aeiou] 匹配字符串 “google runoob taobao” 中除了 e o u a 字母的所有字母</p>
+<p> [A-Z] 表示一个区间，匹配所有大写字母，[a-z] 表示所有小写字母</p>
+<p> <code>/./g</code> 匹配除换行符（\n、\r）之外的任何单个字符，相等于 [^\n\r]，要匹配 <code>.</code> 请使用 <code>\.</code></p>
+<p> <code>/[\s\S]/g</code> 匹配所有。\s 是匹配所有空白符，包括换行，\S 非空白符，不包括换行符</p>
+<p> <code>/\w/g</code> 匹配字母、数字、下划线。等价于 [A-Za-z0-9_]</p>
+<p> <code>&#123;n&#125;</code> n 是一个非负整数。匹配确定的 n 次。例如，’o{2}’ 不能匹配 “Bob” 中的 ‘o’，但是能匹配 “food” 中的两个 o</p>
+<p> <code>&#123;n,&#125;</code> n 是一个非负整数。至少匹配n 次。例如，’o{2,}’ 不能匹配 “Bob” 中的 ‘o’，但能匹配 “foooood” 中的所有 o。’o{1,}’ 等价于 ‘o+’。’o{0,}’ 则等价于 ‘o*’</p>
+<p> <code>&#123;n,m&#125;</code> m 和 n 均为非负整数，其中n &lt;= m。最少匹配 n 次且最多匹配 m 次。例如，”o{1,3}” 将匹配 “fooooood” 中的前三个 o。’o{0,1}’ 等价于 ‘o?’。请注意在逗号和两个数之间不能有空格</p>
+<p> <code>^</code> 匹配输入字符串开始的位置</p>
+<p> <code>$</code> 匹配输入字符串结束的位置</p>
+<p> <code>\b</code> 匹配某元素后面是空格</p>
+<p> <code>\B</code> 匹配某元素后面不是空格</p>
+<p> <code>()</code> 的使用，将表达式分组，<code>/([0-9])([a-z]+)/</code> 匹配以数字开头，至少一个字母的元素。</p>
+<p> <code>i</code> 不区分大小写</p>
+<p> <code>g</code> 全局匹配</p>
+<p> <code>\d</code> 匹配一个数字字符。等价于 [0-9]</p>
+<p> <code>\f</code> 匹配一个换页符</p>
+<p> <code>\n</code> 匹配一个换行符</p>
+<p> <code>\r</code> 匹配一个回车</p>
+<p> <code>\t</code> 匹配制表符</p>
+<p> <code>\s</code> 匹配任何空白字符，包括空格、制表符、换页符等等</p>
+<p> <code>\S</code> 匹配任何非空白字符</p>
+<p> <code>\D</code> 匹配一个非数字字符，等价于[^0-9]</p>
+<h1 id="js中常用的正则方法"><a href="#js中常用的正则方法" class="headerlink" title="js中常用的正则方法"></a>js中常用的正则方法</h1><h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><p> 检测一个字符串是否匹配某个模式。返回true或false</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = 1</span><br><span class="line">var b = /[0-9]/</span><br><span class="line">b.test(a) // true</span><br></pre></td></tr></table></figure>
+<h2 id="exec"><a href="#exec" class="headerlink" title="exec"></a>exec</h2><p>检索字符串中的正则表达式的匹配，返回一个对象，包括匹配到的元素，下标，审查元素，groups。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = &#x27;zze&#x27;</span><br><span class="line">var b = /[aeiou]/</span><br><span class="line">b.exec(a) // [&quot;e&quot;, index: 2, input: &quot;zze&quot;, groups: undefined]</span><br></pre></td></tr></table></figure>
 
-<p>安装好以后，可以自己新建一个文件夹，然后在这个文件夹内</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+<h2 id="search"><a href="#search" class="headerlink" title="search"></a>search</h2><p>检索字符串中与指定的子字符串或正则表达式相匹配的子字符串，返回符合的下标</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = &#x27;123456444&#x27;</span><br><span class="line">var b = a.search(/4/)</span><br><span class="line">b // 3</span><br></pre></td></tr></table></figure>
 
-<p>这样一个初始化的项目就好了，然后我们安装npm依赖</p>
-<p><img src="/images/tree.png"></p>
-<p>scaffolds — 模版文件，hexo会根据你的模版生成文件<br>source — 用户资源存放的<br>themes — 主题文件，博客的主题文件<br>_config.yml — 是配置文件<br>其他的文件可以暂时不用管</p>
-<p>这时候，你就可以安装依赖包了</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<h2 id="match"><a href="#match" class="headerlink" title="match"></a>match</h2><p>在字符串内查找一个或多个与正则表达式匹配的字符串，返回一个对象，包括匹配到的元素，下标，审查元素，groups。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = &#x27;123456444&#x27;</span><br><span class="line">var b = a.match(/4/)</span><br><span class="line">b // [&quot;4&quot;, index: 3, input: &quot;123456444&quot;, groups: undefined]</span><br></pre></td></tr></table></figure>
 
-<p>安装完依赖包之后就可以本地调试，查看效果了</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s --debug</span><br></pre></td></tr></table></figure>
-<p>项目启动成功后，浏览器地址栏localhost:4000即可访问。大概样子为</p>
-<p><img src="/images/init.jpg"></p>
-<h1 id="5-更换主题"><a href="#5-更换主题" class="headerlink" title="5.更换主题"></a>5.更换主题</h1><p>启动后的样子不美观，那怎么办？好在提供了可以下载的主题，地址：<a target="_blank" rel="noopener" href="https://hexo.io/themes/">https://hexo.io/themes/</a></p>
-<p>本文使用的是ayer主题，下载主题</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i hexo-theme-ayer -S</span><br></pre></td></tr></table></figure>
-<p>下载之后根目录会出现一个 <code>_config.ayer.yml</code> 文件，注意这里不要和 <code>_config.yml</code> 混淆。</p>
-<p>下载之后是不能立即生效的，需要手动配置文件，那么这时候要改动的文件是项目配置文件，为了让大家区分开两个配置文件，我们取个别名</p>
-<p><code>_config.ayer.yml</code> 主题配置文件</p>
-<p><code>_config.yml</code> 项目配置文件</p>
-<p>好的，有个区分之后就好区分了，我们要改动项目配置文件的</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: ayer</span><br></pre></td></tr></table></figure>
+<p>默认是不开启全局搜索的，如果开启全局搜索那么返回找到的元素在一个数组内</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = &#x27;123456444&#x27;</span><br><span class="line">var b = a.match(/4/)</span><br><span class="line">b // [&quot;4&quot;, &quot;4&quot;, &quot;4&quot;, &quot;4&quot;]</span><br></pre></td></tr></table></figure>
 
-<p>这时候在看一下你的页面会发现完全变了一个样子。</p>
-<p><img src="/images/ayer_init.jpg"></p>
-<h1 id="6-更新主题"><a href="#6-更新主题" class="headerlink" title="6.更新主题"></a>6.更新主题</h1><p>根目录下直接输入命令</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm update hexo-theme-ayer -S</span><br></pre></td></tr></table></figure>
+<h2 id="replace"><a href="#replace" class="headerlink" title="replace"></a>replace</h2><p>用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串，必须要传递两哥参数，这里也是默认关闭g搜索，所以默认只替换一个，开启会替换所有。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 关闭g</span><br><span class="line">var a = &#x27;123456444&#x27;</span><br><span class="line">var b = a.replace(/4/, 2)</span><br><span class="line">b // 123256444</span><br><span class="line"></span><br><span class="line">// 开启g</span><br><span class="line">var a = &#x27;123456444&#x27;</span><br><span class="line">var b = a.replace(/4/, 2)</span><br><span class="line">b // 123256222</span><br></pre></td></tr></table></figure>
 
-<h1 id="7-必备插件"><a href="#7-必备插件" class="headerlink" title="7.必备插件"></a>7.必备插件</h1><p>hexo-generator-searchdb 用于搜索</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
 
-<h1 id="8-可选插件"><a href="#8-可选插件" class="headerlink" title="8.可选插件"></a>8.可选插件</h1><p>[hexo-blog-encrypt](<a target="_blank" rel="noopener" href="https://github.com/D0n9X1n/hexo-blog-encrypt/blob/master/ReadMe.zh.md">https://github.com/D0n9X1n/hexo-blog-encrypt/blob/master/ReadMe.zh.md</a> 用于文章加密</p>
-<p>这里就说一个，你想要可以去插件市场，一搜一大堆那种，地址：<a target="_blank" rel="noopener" href="https://hexo.io/plugins/">https://hexo.io/plugins/</a></p>
-<h1 id="9-新建菜单"><a href="#9-新建菜单" class="headerlink" title="9.新建菜单"></a>9.新建菜单</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &lt;name&gt;</span><br></pre></td></tr></table></figure>
 
-<p>你会看到source下新出现了一个文件夹，将下面内容复制到index文件内</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">type: &quot;categories&quot;</span><br><span class="line">layout: &quot;categories&quot;</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<h1 id="10-常用命令"><a href="#10-常用命令" class="headerlink" title="10.常用命令"></a>10.常用命令</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo new page &lt;name&gt; // 创建侧边栏菜单</span><br><span class="line">hexo new &lt;module&gt; &lt;name&gt; // 创建某模块文章</span><br><span class="line">hexo d -g // 将你的修改发送的git</span><br><span class="line">hexo clean // 清除缓存，建议每次生成之前都先清除缓存</span><br></pre></td></tr></table></figure>
-
-<h1 id="11-写在最后"><a href="#11-写在最后" class="headerlink" title="11.写在最后"></a>11.写在最后</h1><p>现在你的博客已经基本成型，开始你的第一篇写作吧。</p>
  
       <!-- reward -->
       
@@ -211,12 +213,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://wenhaoli.cn/2021/05/17/creat-20210517/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://wenhaoli.cn/2021/05/27/creat-20210527/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag">Hexo</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%AD%A3%E5%88%99/" rel="tag">正则</a></li></ul>
 
     </footer>
   </div>
@@ -224,19 +226,10 @@
    
   <nav class="article-nav">
     
-      <a href="/2021/05/27/creat-20210527/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            creat_20210527
-          
-        </div>
-      </a>
     
-    
-      <a href="/2021/05/14/creat_20210514/" class="article-nav-link">
+      <a href="/2021/05/17/creat-20210517/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">关于本站</div>
+        <div class="article-nav-title">Hexo + Github 搭建博客</div>
       </a>
     
   </nav>

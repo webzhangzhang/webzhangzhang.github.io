@@ -74,4 +74,66 @@
         <tag>Hexo</tag>
       </tags>
   </entry>
+  <entry>
+    <title>creat_20210527</title>
+    <url>/2021/05/27/creat-20210527/</url>
+    <content><![CDATA[<h1 id="什么是正则"><a href="#什么是正则" class="headerlink" title="什么是正则"></a>什么是正则</h1><p>就一句话–正则表达式通常被用来检索、替换那些符合某个规则的文本。<span id="more"></span></p>
+<h1 id="正则的使用"><a href="#正则的使用" class="headerlink" title="正则的使用"></a>正则的使用</h1><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>语法这块就很简单，我认为，写在双斜杠中间写满足条件的都是正则表达式</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">举个简单的例子</span><br><span class="line">var any = 1</span><br><span class="line">var reg = /[0-9]/</span><br><span class="line">reg.test(any) // true</span><br><span class="line">如果any = &#x27;1&#x27; ,则会返回false</span><br></pre></td></tr></table></figure>
+<p>上面就是一个简单的正则校验。那么我们把 <code>reg</code> 就叫做正则表达式。</p>
+<h2 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h2><p>语法说完了，那我们来说一下修饰符，因为你总要简化你的正则表达式。</p>
+<p> <code>+</code> 代表前面的字符必须至少出现一次（1次或多次）,要匹配 <code>+</code> 请使用 <code>\+</code></p>
+<p> <code>*</code> 代表前面的字符可以不出现，也可以出现一次或者多次（0次、或1次、或多次）,要匹配 <code>*</code> 请使用 <code>\*</code></p>
+<p> <code>?</code> 代表前面的字符最多只可以出现一次（0次、或1次）,要匹配 <code>?</code> 请使用 <code>\?</code></p>
+<p> <code>[]</code> 匹配 […] 中的所有字符，例如 [aeiou] 匹配字符串 “google runoob taobao” 中所有的 e o u a 字母</p>
+<p>  <code>[^]</code>匹配除了 […] 中字符的所有字符，例如 [^aeiou] 匹配字符串 “google runoob taobao” 中除了 e o u a 字母的所有字母</p>
+<p> [A-Z] 表示一个区间，匹配所有大写字母，[a-z] 表示所有小写字母</p>
+<p> <code>/./g</code> 匹配除换行符（\n、\r）之外的任何单个字符，相等于 [^\n\r]，要匹配 <code>.</code> 请使用 <code>\.</code></p>
+<p> <code>/[\s\S]/g</code> 匹配所有。\s 是匹配所有空白符，包括换行，\S 非空白符，不包括换行符</p>
+<p> <code>/\w/g</code> 匹配字母、数字、下划线。等价于 [A-Za-z0-9_]</p>
+<p> <code>&#123;n&#125;</code> n 是一个非负整数。匹配确定的 n 次。例如，’o{2}’ 不能匹配 “Bob” 中的 ‘o’，但是能匹配 “food” 中的两个 o</p>
+<p> <code>&#123;n,&#125;</code> n 是一个非负整数。至少匹配n 次。例如，’o{2,}’ 不能匹配 “Bob” 中的 ‘o’，但能匹配 “foooood” 中的所有 o。’o{1,}’ 等价于 ‘o+’。’o{0,}’ 则等价于 ‘o*’</p>
+<p> <code>&#123;n,m&#125;</code> m 和 n 均为非负整数，其中n &lt;= m。最少匹配 n 次且最多匹配 m 次。例如，”o{1,3}” 将匹配 “fooooood” 中的前三个 o。’o{0,1}’ 等价于 ‘o?’。请注意在逗号和两个数之间不能有空格</p>
+<p> <code>^</code> 匹配输入字符串开始的位置</p>
+<p> <code>$</code> 匹配输入字符串结束的位置</p>
+<p> <code>\b</code> 匹配某元素后面是空格</p>
+<p> <code>\B</code> 匹配某元素后面不是空格</p>
+<p> <code>()</code> 的使用，将表达式分组，<code>/([0-9])([a-z]+)/</code> 匹配以数字开头，至少一个字母的元素。</p>
+<p> <code>i</code> 不区分大小写</p>
+<p> <code>g</code> 全局匹配</p>
+<p> <code>\d</code> 匹配一个数字字符。等价于 [0-9]</p>
+<p> <code>\f</code> 匹配一个换页符</p>
+<p> <code>\n</code> 匹配一个换行符</p>
+<p> <code>\r</code> 匹配一个回车</p>
+<p> <code>\t</code> 匹配制表符</p>
+<p> <code>\s</code> 匹配任何空白字符，包括空格、制表符、换页符等等</p>
+<p> <code>\S</code> 匹配任何非空白字符</p>
+<p> <code>\D</code> 匹配一个非数字字符，等价于[^0-9]</p>
+<h1 id="js中常用的正则方法"><a href="#js中常用的正则方法" class="headerlink" title="js中常用的正则方法"></a>js中常用的正则方法</h1><h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><p> 检测一个字符串是否匹配某个模式。返回true或false</p>
+ <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var a = 1</span><br><span class="line">var b = /[0-9]/</span><br><span class="line">b.test(a) // true</span><br></pre></td></tr></table></figure>
+<h2 id="exec"><a href="#exec" class="headerlink" title="exec"></a>exec</h2><p>检索字符串中的正则表达式的匹配，返回一个对象，包括匹配到的元素，下标，审查元素，groups。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var a = &#x27;zze&#x27;</span><br><span class="line">var b = /[aeiou]/</span><br><span class="line">b.exec(a) // [&quot;e&quot;, index: 2, input: &quot;zze&quot;, groups: undefined]</span><br></pre></td></tr></table></figure>
+
+<h2 id="search"><a href="#search" class="headerlink" title="search"></a>search</h2><p>检索字符串中与指定的子字符串或正则表达式相匹配的子字符串，返回符合的下标</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var a = &#x27;123456444&#x27;</span><br><span class="line">var b = a.search(/4/)</span><br><span class="line">b // 3</span><br></pre></td></tr></table></figure>
+
+<h2 id="match"><a href="#match" class="headerlink" title="match"></a>match</h2><p>在字符串内查找一个或多个与正则表达式匹配的字符串，返回一个对象，包括匹配到的元素，下标，审查元素，groups。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var a = &#x27;123456444&#x27;</span><br><span class="line">var b = a.match(/4/)</span><br><span class="line">b // [&quot;4&quot;, index: 3, input: &quot;123456444&quot;, groups: undefined]</span><br></pre></td></tr></table></figure>
+
+<p>默认是不开启全局搜索的，如果开启全局搜索那么返回找到的元素在一个数组内</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">var a = &#x27;123456444&#x27;</span><br><span class="line">var b = a.match(/4/)</span><br><span class="line">b // [&quot;4&quot;, &quot;4&quot;, &quot;4&quot;, &quot;4&quot;]</span><br></pre></td></tr></table></figure>
+
+<h2 id="replace"><a href="#replace" class="headerlink" title="replace"></a>replace</h2><p>用于在字符串中用一些字符替换另一些字符，或替换一个与正则表达式匹配的子串，必须要传递两哥参数，这里也是默认关闭g搜索，所以默认只替换一个，开启会替换所有。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 关闭g</span><br><span class="line">var a = &#x27;123456444&#x27;</span><br><span class="line">var b = a.replace(/4/, 2)</span><br><span class="line">b // 123256444</span><br><span class="line"></span><br><span class="line">// 开启g</span><br><span class="line">var a = &#x27;123456444&#x27;</span><br><span class="line">var b = a.replace(/4/, 2)</span><br><span class="line">b // 123256222</span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <categories>
+        <category>技术</category>
+      </categories>
+      <tags>
+        <tag>正则</tag>
+      </tags>
+  </entry>
 </search>
